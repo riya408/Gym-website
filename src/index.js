@@ -1,54 +1,18 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import "./index.css";
-import reportWebVitals from "./reportWebVitals";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import HomePage from "./Components/HomePage";
-import AboutUs from "./Components/AboutUs";
-import Register from "./Components/Register";
-import Login from "./Components/Login";
-import ShowTeam from "./Components/ShowTeam";
-import { RecoilRoot } from "recoil";
-import Activity from "./Components/Activity";
-import Pricing from "./Components/Pricing";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import Router from './Components/Router/Router';
+import reportWebVitals from './reportWebVitals';
+import { BrowserRouter } from 'react-router-dom';
+import { RecoilRoot } from 'recoil';
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <HomePage />,
-  },
-  {
-    path: "/AboutUs",
-    element: <AboutUs />,
-  },
-  {
-    path: "/Register",
-    element: <Register />,
-  },
-  {
-    path: "/Login",
-    element: <Login />,
-  },
-  {
-    path: "/showTeam",
-    element: <ShowTeam />,
-  },
-  {
-    path: "/activity",
-    element: <Activity />,
-  },
-
-  {
-    path: "/pricing",
-    element: <Pricing />,
-  },
-]);
-
+const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <RecoilRoot>
-      <RouterProvider router={router} />
+      <BrowserRouter>
+        <Router />
+      </BrowserRouter>
     </RecoilRoot>
   </React.StrictMode>
 );
